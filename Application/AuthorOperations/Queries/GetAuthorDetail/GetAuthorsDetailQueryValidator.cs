@@ -2,9 +2,9 @@
 
 namespace WebApi.Application.AuthorOperations.Queries.GetAuthorDetail
 {
-	public class GetAuthorsDetailCommandValidator : AbstractValidator<GetAuthorsDetailCommand>
+	public class GetAuthorsDetailQueryValidator : AbstractValidator<GetAuthorsDetailQuery>
 	{
-		public GetAuthorsDetailCommandValidator()
+		public GetAuthorsDetailQueryValidator()
 		{
 			RuleFor(x => x.AuthorId).GreaterThan(0);
 		}

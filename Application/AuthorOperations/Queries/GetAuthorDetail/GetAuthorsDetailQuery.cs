@@ -3,7 +3,7 @@ using WebApi.DbOperation;
 
 namespace WebApi.Application.AuthorOperations.Queries.GetAuthorDetail
 {
-	public class GetAuthorsDetailCommand
+	public class GetAuthorsDetailQuery
 	{
 		public int AuthorId { get; set; }
 
@@ -11,7 +11,7 @@ namespace WebApi.Application.AuthorOperations.Queries.GetAuthorDetail
 
 		private readonly IMapper _mapper;
 
-		public GetAuthorsDetailCommand(BookStoreDbContext dbContext, IMapper mapper)
+		public GetAuthorsDetailQuery(BookStoreDbContext dbContext, IMapper mapper)
 		{
 			_dbContext = dbContext;
 			_mapper = mapper;
