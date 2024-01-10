@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\AuthorOperations\" />
+    <Folder Include="Application\AuthorOperations\Command\" />
   </ItemGroup>
 
 </Project>
