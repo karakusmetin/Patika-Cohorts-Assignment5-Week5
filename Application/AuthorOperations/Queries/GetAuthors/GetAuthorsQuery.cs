@@ -3,30 +3,30 @@ using WebApi.DbOperation;
 
 namespace WebApi.Application.AuthorOperations.Queries.GetAuthors
 {
-	public class GetAuthorsCommand
+	public class GetAuthorsQuery
 	{
 		private readonly BookStoreDbContext _dbContext;
 
 		private readonly IMapper _mapper;
 
-		public GetAuthorsCommand(BookStoreDbContext dbContext, IMapper mapper)
+		public GetAuthorsQuery(BookStoreDbContext dbContext, IMapper mapper)
 		{
 			_dbContext = dbContext;
 			_mapper = mapper;
 		}
 
-		public AuthorsView Handle()
+		public List<AuthorsView> Handle()
 		{
 			var command = _dbContext.Authors.OrderBy(x=>x.Id);
-			AuthorsView returnobj = _mapper.Map<AuthorsView>(command);
+			List<AuthorsView> returnobj = _mapper.Map<List<AuthorsView>>(command);
 			return returnobj;
 		}
 	}
 
 	public class AuthorsView
 	{
-		public int Name { get; set; }
-		public int LastName { get; set; }
+		public string Name { get; set; }
+		public string LastName { get; set; }
 		public DateTime DateofBirth { get; set; }
 
 	}

@@ -19,7 +19,7 @@ namespace WebApi.Application.AuthorOperations.Queries.GetAuthorDetail
 
 		public AuthorDetailView Handle()
 		{
-			var command = _dbContext.Authors.SingleOrDefault(x=>x.Id == AuthorId);
+			var command = _dbContext.Authors.Where(book => book.Id == AuthorId).SingleOrDefault();
 			if (command == null)
 			{
 				throw new InvalidOperationException("Aranan Yazar Bulunamadı");
@@ -31,8 +31,8 @@ namespace WebApi.Application.AuthorOperations.Queries.GetAuthorDetail
 
 	public class AuthorDetailView
 	{
-		public int Name { get; set; }
-		public int LastName { get; set; }
+		public string Name { get; set; }
+		public string LastName { get; set; }
 		public DateTime DateofBirth { get; set; }
 
 	} 

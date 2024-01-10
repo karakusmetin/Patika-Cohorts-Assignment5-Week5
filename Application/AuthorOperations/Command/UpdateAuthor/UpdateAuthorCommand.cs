@@ -21,8 +21,8 @@ namespace WebApi.Application.AuthorOperations.Command.UpdateAuthor
 			{
 				throw new InvalidOperationException("Yazar Bulunamadı");
 			}
-			if (_dbContext.Authors.Any(x => x.Name.ToLower()+x.LastName.ToLower() == Model.Name.ToLower()+ Model.LastName.ToLower()))
-
+			var variable = _dbContext.Authors.SingleOrDefault(x => (x.Name + x.LastName).ToLower() == (Model.Name + Model.LastName).ToLower());
+			if (variable != null)
 			{
 				throw new InvalidOperationException("Güncellenecek Kitap türü zaten mevcut.");
 			}

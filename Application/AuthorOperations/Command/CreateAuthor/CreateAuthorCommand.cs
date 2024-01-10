@@ -23,7 +23,7 @@ namespace WebApi.Application.AuthorOperations.Command.CreateAuthor
 			{
 				throw new InvalidOperationException("Eklemeye Çalıştığınız yazar zaten mevcut");
 			}
-			command = mapper.Map<Author>(command);
+			command = mapper.Map<Author>(Model);
 			_dbContext.Authors.Add(command);
 			_dbContext.SaveChanges();
 		}

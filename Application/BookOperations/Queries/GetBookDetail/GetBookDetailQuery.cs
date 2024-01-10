@@ -8,13 +8,13 @@ namespace WebApi.Application.BookOperations.GetBookDetail
     public class GetBookDetailQuery
     {
         private readonly BookStoreDbContext _dbContext;
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
 
         public int BookID { get; set; }
         public GetBookDetailQuery(BookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
-            this.mapper = mapper;
+            _mapper = mapper;
         }
         public BookDetailViewModel Handle()
         {
@@ -23,7 +23,7 @@ namespace WebApi.Application.BookOperations.GetBookDetail
             {
                 throw new InvalidOperationException("Kitap Bulunamadı");
             }
-            BookDetailViewModel vm = mapper.Map<BookDetailViewModel>(book);
+            BookDetailViewModel vm = _mapper.Map<BookDetailViewModel>(book);
             return vm;
         }
 

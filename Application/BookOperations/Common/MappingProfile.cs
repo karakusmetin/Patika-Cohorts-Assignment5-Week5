@@ -22,7 +22,8 @@ namespace WebApi.Application.BookOperations.Common
             CreateMap<Genre, GenresDetailViewModel>();
             CreateMap<Author, AuthorDetailView>();
             CreateMap<Author, AuthorsView>();
-            CreateMap<CreateAuthorModel, Author>();
+			CreateMap<AuthorsView, Author>();
+			CreateMap<CreateAuthorModel, Author>();
         }
     }
 }

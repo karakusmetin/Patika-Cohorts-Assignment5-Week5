@@ -13,6 +13,26 @@ namespace WebApi.DbOperation
 				{
 					return;
 				}
+				context.Authors.AddRange(
+					new Author
+					{
+						Name = "Adam",
+						LastName ="Smith",
+						DateOfBirth = new DateTime(2001, 06, 12),
+					},
+					new Author
+					{
+						Name = "Victor",
+						LastName = "Hugo",
+						DateOfBirth = new DateTime(1976, 03, 04),
+					},
+					new Author
+					{
+						Name = "Jack",
+						LastName = "London",
+						DateOfBirth = new DateTime(1985, 09, 22),
+					}
+				);
 
 				context.Genres.AddRange(
 					new Genre

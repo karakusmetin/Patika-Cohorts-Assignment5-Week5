@@ -54,7 +54,7 @@ namespace WebApi.Controllers
 			command.Handle();
 			return Ok();
 		}
-		[HttpPut("{}")]
+		[HttpPut("{id}")]
 		public IActionResult UpdateGenre(int id,[FromBody] UpdateGenreModel updateGenre)
 		{
 			UpdateGenreCommand command = new UpdateGenreCommand(_dbContext);
